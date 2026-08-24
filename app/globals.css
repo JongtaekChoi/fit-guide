@@ -1,0 +1,69 @@
+:root {
+  --ink: #172033;
+  --muted: #687185;
+  --paper: #f7f8fc;
+  --surface: #ffffff;
+  --line: #e4e8f0;
+  --blue: #2563eb;
+  --blue-soft: #eaf1ff;
+  --navy: #19233c;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+button { font: inherit; cursor: pointer; }
+main { max-width: 1440px; margin: 0 auto; padding: 64px 32px 80px; }
+
+.hero { max-width: 700px; margin-bottom: 48px; }
+.eyebrow { margin: 0 0 14px; color: var(--blue); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+h1 { margin: 0; font-size: clamp(38px, 5vw, 64px); line-height: 1.1; letter-spacing: -.065em; }
+.lede { max-width: 620px; color: var(--muted); font-size: 17px; line-height: 1.75; margin: 22px 0 0; }
+
+.workspace { display: grid; grid-template-columns: minmax(220px, .72fr) minmax(420px, 1.5fr) minmax(260px, .9fr); gap: 18px; align-items: start; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 22px; box-shadow: 0 12px 28px rgba(34, 49, 76, .04); }
+.panel-heading { display: flex; gap: 11px; margin-bottom: 22px; }
+.panel-heading h2 { margin: 0 0 6px; font-size: 18px; letter-spacing: -.03em; }
+.panel-heading p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+.step { display: grid; flex: 0 0 27px; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); font-size: 12px; font-weight: 800; }
+
+.upload-button { width: 100%; padding: 13px 16px; border: 0; border-radius: 10px; background: var(--navy); color: white; font-weight: 700; }
+.shooting-guide { padding: 0; margin: 22px 0 0; list-style: none; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.shooting-guide li { position: relative; padding-left: 13px; margin-bottom: 10px; }
+.shooting-guide li::before { content: "·"; position: absolute; left: 1px; color: var(--blue); font-weight: 900; }
+
+.image-stage { position: relative; overflow: hidden; background: #e8edf5; border-radius: 13px; }
+.image-stage img { display: block; width: 100%; max-height: 720px; object-fit: contain; }
+.image-stage svg { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; }
+.image-stage line { stroke: rgba(37, 99, 235, .8); stroke-width: 4; stroke-linecap: round; }
+.image-stage circle { fill: white; stroke: var(--blue); stroke-width: 7; cursor: grab; }
+.image-stage .active-point circle { fill: var(--blue); stroke: white; }
+.image-stage text { fill: var(--navy); font-size: 25px; font-weight: 800; paint-order: stroke; stroke: white; stroke-width: 6; stroke-linejoin: round; pointer-events: none; }
+.empty-stage { min-height: 450px; display: grid; place-items: center; border: 1px dashed #bdc8d9; border-radius: 13px; background: linear-gradient(135deg, #f7f9fd, #edf2fa); color: #8490a4; line-height: 1.55; text-align: center; }
+
+.landmark-picker { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+.landmark-picker button { border: 1px solid var(--line); background: white; color: #667087; border-radius: 999px; padding: 7px 10px; font-size: 12px; }
+.landmark-picker button.selected { border-color: #a9c5ff; background: var(--blue-soft); color: var(--blue); font-weight: 700; }
+
+.ratio-list { display: grid; gap: 9px; }
+.ratio-card { padding: 13px; border-radius: 12px; background: #f8faff; }
+.ratio-card span { display: block; color: var(--muted); font-size: 12px; }
+.ratio-card strong { display: block; margin: 3px 0 4px; color: var(--blue); font-size: 19px; letter-spacing: -.03em; }
+.ratio-card p { margin: 0; color: #4b566c; font-size: 12px; line-height: 1.4; }
+.guidance { padding-top: 22px; margin-top: 22px; border-top: 1px solid var(--line); }
+.guidance-label { margin: 0 0 12px; color: var(--blue); font-size: 12px; font-weight: 800; }
+.guidance article { margin: 0 0 14px; }
+.guidance h3 { margin: 0 0 4px; font-size: 14px; }
+.guidance p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+@media (max-width: 1120px) {
+  .workspace { grid-template-columns: 1fr 1fr; }
+  .canvas-panel { grid-column: span 2; grid-row: 1; }
+}
+@media (max-width: 680px) {
+  main { padding: 38px 16px 50px; }
+  .workspace { display: flex; flex-direction: column; }
+  .panel, .canvas-panel { width: 100%; }
+  .empty-stage { min-height: 360px; }
+}
