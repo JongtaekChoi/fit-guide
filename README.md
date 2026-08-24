@@ -28,6 +28,7 @@ FitGuide는 정면 전신사진과 키를 바탕으로 머리·어깨·상체·�
 
 - [제품 방향과 MVP 명세](docs/product/mvp-spec.md)
 - [측정 기준점과 비율 계산 규칙](docs/product/measurement-model.md)
+- [사진 코칭 기능 기획](docs/product/photo-coaching.md)
 - [개발 로드맵](docs/roadmap.md)
 
 ## 원칙
